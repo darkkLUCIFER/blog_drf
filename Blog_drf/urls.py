@@ -21,4 +21,6 @@ urlpatterns = [
 
     # django_rest
     path('api-auth/', include('rest_framework.urls')),
+    path('', include('blog.urls', namespace='blog')),
+
 ]

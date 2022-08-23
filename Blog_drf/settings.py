@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # apps
     'blog.apps.BlogConfig',
+    'api.apps.ApiConfig',
 
     # django_rest
     'rest_framework',

@@ -9,6 +9,7 @@ from .permissions import IsSuperUserOrStaffOrReadOnly, IsAuthorOrReadOnly, IsSta
 class PostViewSet(ModelViewSet):
     queryset = Post.objects.filter(status=True)
     serializer_class = PostSerializer
+    filterset_fields = ['status', 'author__username']
 
     def get_permissions(self):
         if self.action == ['list', 'create']:

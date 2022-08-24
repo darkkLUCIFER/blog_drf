@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     # django_rest
     'rest_framework',
+    'django_filters',
 
 ]
 

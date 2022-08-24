@@ -11,6 +11,7 @@ class PostViewSet(ModelViewSet):
     serializer_class = PostSerializer
     filterset_fields = ['status', 'author__username']
     search_fields = ['title', 'content', 'author__first_name', 'author__last_name']
+    ordering_fields = ['publish', 'status']
 
     def get_permissions(self):
         if self.action == ['list', 'create']:

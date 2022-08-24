@@ -42,6 +42,14 @@ INSTALLED_APPS = [
     # django_rest
     'rest_framework',
     'django_filters',
+    'rest_framework.authtoken',
+
+    # authentication
+    'dj_rest_auth',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'dj_rest_auth.registration',
 
 ]
 
@@ -133,5 +141,14 @@ REST_FRAMEWORK = {
         'django_filters.rest_framework.DjangoFilterBackend',
         'rest_framework.filters.SearchFilter',
         'rest_framework.filters.OrderingFilter',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
     ]
 }
+
+SITE_ID = 1
+REST_USE_JWT = True
+
+JWT_AUTH_COOKIE = 'token'
+JWT_AUTH_REFRESH_COOKIE = 'refresh-token'
